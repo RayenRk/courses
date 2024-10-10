@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>addcourse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-margin">
+    <form #f="ngForm" class="">
+      <ion-label> Title </ion-label>
+      <ion-input ngModel required name="title" type="text"></ion-input>
+      <ion-label> Author </ion-label>
+      <ion-input ngModel name="author" type="text"></ion-input>
+      <ion-label> Image </ion-label>
+      <ion-input ngModel required name="image" type="url"></ion-input>
+      <ion-label> Keywords </ion-label>
+      <ion-input ngModel name="keywords" type="text"></ion-input>
+
+      <ion-button
+        [disabled]="f.invalid"
+        (click)="onSubmit(f.value)"
+        type="submit"
+        expand="full"
+        >Add</ion-button
+      >
+
+      <!-- <pre>
+   
+        {{ f.value | json }}
+      </pre> -->
+    </form>
+  </div>
+</ion-content>
